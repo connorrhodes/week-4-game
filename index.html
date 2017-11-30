@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!--reference reset.css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
     <!--reference style.css -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
     <!--reference the jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
     <!--reference any bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -44,34 +48,80 @@
     <!--6 rows in a container 
         and possibly 2 columns -->
     <div class="container">
-        <div class="col-lg-6">
+        <div id="column1" class="col-lg-6">
             <!--Crystal Collector Title -->
             <div class="row">
-
+                <h2 class="panel-title">Crystal Collector</h2>
+                <br>
             </div>
             <!--Instructions -->
             <div class="row">
-
+                <div class="col-md-6">
+                    <p>You will be given a random number at the start of the game.</p>
+                    <br/>
+                    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of point to your
+                        total score.</p>
+                    <br>
+                    <p>You win the game by matching your total score to a random number, you lose the game if your total score
+                        goes above the random number.</p>
+                    <br>
+                    <p>THe value of each crystal is hidden from you until you click on it.</p>
+                    <br>
+                    <p>Each time when the game starts, the game will change the values of each crystal.</p>
+                    <br>
+                </div>
             </div>
             <!--Scoreboard & Wins/Losses -->
             <div class="row">
+                <div class="col-md-3">
+                    <h3 id="randomScore" value="">0</h3>
+                </div>
+                <div class="col-md-1">
+                    <p id="wins">Wins: </p>
+                    <p id="winScore" value=""></p>
+                    <br>
+                    <p id="losses">Losses: </p>
+                    <p id="loseScore" value=""></p>
+                </div>
 
             </div>
             <!--Crystal Buttons -->
             <div class="row">
+                <div class="col-md-2">
+                    <button id="button-1" class="btn btn-default" value="">
+                        <img src="assets/images/green_gem.png" id="green" alt="" class="" value="">
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button id="button-2" class="btn btn-default" value="">
+                        <img src="assets/images/yellow_gem.png" id="yellow" alt="" class="" value="">
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button id="button-3" class="btn btn-default" value="">
+                        <img src="assets/images/red_gem.png" id="red" alt="" class="" value="">
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button id="button-4" class="btn btn-default" value="">
+                        <img src="assets/images/blue_gem.png" id="blue" alt="" class="" value="">
+                    </button>
+                </div>
 
             </div>
             <!--Total Score title -->
             <div class="row">
-
+                <p id="totalScoreTitle">Your total score is: </p>
+                <!--<p id = "totalScore" value = ""></p> -->
             </div>
             <!--Score Result -->
             <div class="row">
+                <h3 id="scoreboard" value="">0</h3>
 
             </div>
         </div>
         <!--Default second column to take up space so the content fits in the left side of the container -->
-        <div class="col-lg-6">
+        <div id="column2" class="col-lg-6">
 
         </div>
 
