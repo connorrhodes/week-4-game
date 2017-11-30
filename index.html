@@ -40,11 +40,57 @@
 <body>
     <!--HTML and Bootstrap -->
     <!-- ______________________________________________________________________________________ -->
+
+    <!--6 rows in a container 
+        and possibly 2 columns -->
+    <div class="container">
+        <div class="col-lg-6">
+            <!--Crystal Collector Title -->
+            <div class="row">
+
+            </div>
+            <!--Instructions -->
+            <div class="row">
+
+            </div>
+            <!--Scoreboard & Wins/Losses -->
+            <div class="row">
+
+            </div>
+            <!--Crystal Buttons -->
+            <div class="row">
+
+            </div>
+            <!--Total Score title -->
+            <div class="row">
+
+            </div>
+            <!--Score Result -->
+            <div class="row">
+
+            </div>
+        </div>
+        <!--Default second column to take up space so the content fits in the left side of the container -->
+        <div class="col-lg-6">
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
     <!-- ______________________________________________________________________________________ -->
 
     <!--script -->
     <!-- ______________________________________________________________________________________ -->
     <script>
+
+
+        //functions
         function genRandonNum() {
             //random number generated between 19-120
             var randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
@@ -60,7 +106,8 @@
             //function established to generate a random number between 1-12
             Math.floor(Math.random() * 12) + 1;
         }
-
+        //---------------------------------------------------------------------------------------
+        //calls
         genRandomNumReturn();
 
         var imgOne = genRandomNumReturn();
