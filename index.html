@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css"><!--reference reset.css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> <!--reference style.css -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--reference the jQuery -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!--reference reset.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--reference style.css -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--reference the jQuery -->
     <!--reference any bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -18,38 +21,59 @@
     <title>Crystal Collector</title>
 </head>
 
+<!--
+    Instructions:
+    The player will have to guess the answer, just like in Hangman. This time, though, the player will guess with numbers instead of letters.
+    Here's how the app works:
+    There will be four crystals displayed as buttons on the page.
+    The player will be shown a random number at the start of the game.
+    When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
+    Your game will hide this amount until the player clicks a crystal.
+    When they do click one, update the player's score counter.
+    The player wins if their total score matches the random number from the beginning of the game.
+    The player loses if their score goes above the random number.
+    The game restarts whenever the player wins or loses.
+    When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
+    The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
+ -->
+
 <body>
-<!--HTML and Bootstrap -->
-<!-- ______________________________________________________________________________________ -->
-<!-- ______________________________________________________________________________________ -->
+    <!--HTML and Bootstrap -->
+    <!-- ______________________________________________________________________________________ -->
+    <!-- ______________________________________________________________________________________ -->
 
-<!--script -->
-<!-- ______________________________________________________________________________________ -->
-<script>
-    function genRandonNum() {
-        //random number generated between 19-120
-        var randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-        console.log("random: " + randomNum);
-    }
+    <!--script -->
+    <!-- ______________________________________________________________________________________ -->
+    <script>
+        function genRandonNum() {
+            //random number generated between 19-120
+            var randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+            console.log("random: " + randomNum);
+        }
 
-    function genRandomNumReturn() {
-        //returns a generated number between 19-120
-        return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-    }
+        function genRandomNumReturn() {
+            //returns a generated number between 19-120
+            return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+        }
 
-    genRandomNumReturn();
+        function crystalHiddenValue() {
+            //function established to generate a random number between 1-12
+            Math.floor(Math.random() * 12) + 1;
+        }
 
-    var imgOne = genRandomNumReturn();
-    var imgTwo = genRandomNumReturn();
-    var imgThree = genRandomNumReturn();
-    var imgFour = genRandomNumReturn();
+        genRandomNumReturn();
 
-    console.log(imgOne , imgTwo , imgThree , imgFour);
+        var imgOne = genRandomNumReturn();
+        var imgTwo = genRandomNumReturn();
+        var imgThree = genRandomNumReturn();
+        var imgFour = genRandomNumReturn();
+
+        console.log(imgOne, imgTwo, imgThree, imgFour);
 
 
 
-</script>
-<!-- ______________________________________________________________________________________ -->
+    </script>
+    <!-- ______________________________________________________________________________________ -->
 
 </body>
 
