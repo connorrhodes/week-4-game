@@ -13,10 +13,6 @@
 // When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
 // The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 //the guess total
-var scoreBoard = 0;
-var wins = 0;
-var losses = 0;
-var yourScore;
 //the random total you need to match
 var randomScore = Math.floor((Math.random() * 102) + 19);
 //the randomly generated numbers generated for each crystal
@@ -25,6 +21,12 @@ var gemYellow = Math.floor((Math.random() * 12) + 1);
 var gemRed = Math.floor((Math.random() * 12) + 1);
 var gemBlue = Math.floor((Math.random() * 12) + 1);
 
+var scoreBoard = 0;
+var wins = 0;
+var losses = 0;
+//var yourScore;
+
+
 // $(document).ready(function () {
 //     $(".default").on("click"), function () {
 //         $(this).val(crystalHiddenValue) += $("#scoreboard").val();
@@ -32,18 +34,18 @@ var gemBlue = Math.floor((Math.random() * 12) + 1);
 
 // });
 
-$("#randomScore").html(randomScore);
+$(".randomScore").html(randomScore);
 //green yellow red blue
-$("#green").click(function(){
+$(".green").click(function(){
     update(gemGreen);
 });
-$("#yellow").click(function(){
+$(".yellow").click(function(){
     update(gemYellow);
 });
-$("#red").click(function(){
+$(".red").click(function(){
     update(gemRed);
 });
-$("#blue").click(function(){
+$(".blue").click(function(){
     update(gemBlue);
 });
 
@@ -64,7 +66,7 @@ function initialize() {
     //resets the random number for the scoreboard you need to match
     randomScore = Math.floor((Math.random() * 102) + 19);
     //First scoreboard
-    $("#randomScore").html(randomScore);
+    $(".randomScore").html(randomScore);
     
     gemGreen = Math.floor((Math.random() * 12) + 1);
     gemYellow = Math.floor((Math.random() * 12) + 1);
@@ -74,7 +76,7 @@ function initialize() {
     //resets the scoreboard that will collect your guesses
     scoreBoard = 0;
     //Second scoreboard
-    $("#scoreBoard").html(scoreBoard);
+    $(".scoreBoard").html(scoreBoard);
 
     //previous attempts i may go back to eventually
     // for(var i =0; i < cArr.length; i++){
@@ -100,9 +102,9 @@ function update(crystal){
     //Will increase the scoreboard from what crystal you pick
     scoreBoard += crystal;
 
-    $("#scoreBoard").empty();
+    $(".scoreBoard").empty();
 
-    $("#scoreBoard").append(scoreBoard);
+    $(".scoreBoard").append(scoreBoard);
 
     if (scoreBoard > randomScore) {
         losses++;
