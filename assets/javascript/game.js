@@ -36,6 +36,8 @@ var losses = 0;
 
 $(".randomScore").html(randomScore);
 //green yellow red blue
+//Calls on the update function to change the scoreboard
+//based on what was clicked
 $(".green").click(function(){
     update(gemGreen);
 });
@@ -67,7 +69,7 @@ function initialize() {
     randomScore = Math.floor((Math.random() * 102) + 19);
     //First scoreboard
     $(".randomScore").html(randomScore);
-    
+    //when you win or lose a game, the gems get new random numbers
     gemGreen = Math.floor((Math.random() * 12) + 1);
     gemYellow = Math.floor((Math.random() * 12) + 1);
     gemRed = Math.floor((Math.random() * 12) + 1);
@@ -103,19 +105,20 @@ function update(crystal){
     scoreBoard += crystal;
 
     $(".scoreBoard").empty();
-
+    //appends the new score
     $(".scoreBoard").append(scoreBoard);
-
+    //logic for the scoreboard
     if (scoreBoard > randomScore) {
         losses++;
         $("#loseScore").html(losses);
-
+        //if you lose, the game resets with a loss++
         initialize();
 
         
     } else if (scoreBoard == randomScore) {
         wins++;
         $("#winScore").html(wins);
+        //if you win, the game resets with a win++
         initialize();
     };
 
@@ -140,7 +143,7 @@ function update(crystal){
 //     return Math.floor(Math.random() * 12) + 1;
 
 // }
-//console.loging the random numbers for the crystals and scoreboard
+//console.logging the random numbers for the crystals and scoreboard
 //for testing purposes
 });
 console.log("green: " + gemGreen);
