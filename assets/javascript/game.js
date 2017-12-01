@@ -27,12 +27,12 @@ var losses = 0;
 //var yourScore;
 
 
-// $(document).ready(function () {
+ $(document).ready(function () {
 //     $(".default").on("click"), function () {
 //         $(this).val(crystalHiddenValue) += $("#scoreboard").val();
 //     }
 
-// });
+ 
 
 $(".randomScore").html(randomScore);
 //green yellow red blue
@@ -116,7 +116,7 @@ function update(crystal){
     } else if (scoreBoard == randomScore) {
         wins++;
         $("#winScore").html(wins);
-        reset();
+        initialize();
     };
 
 };
@@ -124,23 +124,30 @@ function update(crystal){
 
 
 
-function genRandonNum() {
-    //random number generated between 19-120
-    var randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-    console.log("random: " + randomNum);
-}
+// function genRandonNum() {
+//     //random number generated between 19-120
+//     var randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+//     console.log("random: " + randomNum);
+// }
 
-function genRandomNumReturn() {
-    //returns a generated number between 19-120
-    return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-}
+// function genRandomNumReturn() {
+//     //returns a generated number between 19-120
+//     return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+// }
 
-function crystalHiddenValue() {
-    //function established to generate a random number between 1-12
-    return Math.floor(Math.random() * 12) + 1;
+// function crystalHiddenValue() {
+//     //function established to generate a random number between 1-12
+//     return Math.floor(Math.random() * 12) + 1;
 
-}
-
+// }
+//console.loging the random numbers for the crystals and scoreboard
+//for testing purposes
+});
+console.log("green: " + gemGreen);
+console.log("yellow: " + gemYellow);
+console.log("red: " + gemRed);
+console.log("blue: " + gemBlue);
+console.log("randomscore: " + randomScore);
 
 
 //---------------------------------------------------------------------------------------
